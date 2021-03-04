@@ -29,3 +29,18 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+# 设置FFmpeg 头文件位置，以便Qt能找到它们
+INCLUDEPATH += D:/QT_learning/ffmpeg/include
+
+INCLUDEPATH += -L D:/QT_learning/ffmpeg/lib \
+            -lavcodec \
+            -lavdevice \
+            -lavfilter \
+            -lavformat \
+            -lavutil \
+            -lpostproc \
+            -lswresample \
+            -lswscale
+
+
